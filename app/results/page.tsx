@@ -29,7 +29,6 @@ function ResultsContent() {
 
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
   const [favSet, setFavSet] = useState<Set<string>>(new Set());
   const [blockedSet, setBlockedSet] = useState<Set<string>>(new Set());
   const [page, setPage] = useState(1);
@@ -122,7 +121,6 @@ function ResultsContent() {
 
   useEffect(() => {
     if (!categoryCode || !lat || !lng) {
-      setError("위치 정보가 없습니다. 위치 설정 페이지로 이동해 주세요.");
       setLoading(false);
       return;
     }
